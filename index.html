@@ -8,10 +8,23 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    
-    <div class = 'container'>
-
+    <div class = 'flex-container'>
+        <div class = 'board'></div>
+        <div class = 'custom-div'>
+            <div class = 'buttons'>
+                <button class = 'black'>Black</button>
+                <button class = 'white'>White</button>
+                <button class = 'random'>Random</button>
+                <button class = 'reset'>Reset</button>
+            </div>
+            <div class = 'customizer'>
+                <input type ="range" value = 16 min = 16 max = 100/>
+                <button class = 'apply'>Apply</button>
+            </div>
+            <h3>16 x 16</h3>
+        </div>
     </div>
+    
 
 
     <script src="app.js"></script>
