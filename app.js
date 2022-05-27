@@ -3,6 +3,11 @@ const board = document.querySelector('.board');
 const apply = document.querySelector('.apply')
 const resetButton = document.querySelector('.reset')
 const randomButton = document.querySelector('.random')
+const eraseButton = document.querySelector('.erase')
+
+eraseButton.addEventListener('click', () => {
+    erase();
+})
 
 randomButton.addEventListener('click', () => {
     randomColor();
@@ -54,9 +59,18 @@ const randomColor = () => {
         const y = Math.floor(Math.random() * 256)
         const z = Math.floor(Math.random() * 256)
         const bgColor = `rgb(${x},${y},${z})`
-        console.log(bgColor);
         tiles[i].addEventListener('mouseenter', e => {
             tiles[e.target.id].style.backgroundColor = bgColor
+        })
+    }
+}
+
+const erase = () => {
+    const tiles = document.querySelectorAll('.tile')
+
+    for (i = 0; i < tiles.length; i++) {
+        tiles[i].addEventListener('mouseenter', e => {
+            tiles[e.target.id].style.backgroundColor = 'white'
         })
     }
 }
